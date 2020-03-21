@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Campus Ride wallet</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <!-- CSS Files -->
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap-reboot.min.css">
+    <!-- Main Css  -->
+    <link href="./assets/css/campusride.css" rel="stylesheet" />
+    <link href="./assets/demo/demo.css" rel="stylesheet" />
+    <link href="./assets/css/cssanimation.min.css" rel="stylesheet" />
+
+
+    <style>
+        * {
+            font-family: 'Rubik', sans-serif;
+        }
+        
+        body {
+            font-family: 'Rubik', sans-serif;
+            letter-spacing: 2px;
+        }
+        
+        #panel {
+            background-image: -moz-linear-gradient( 122deg, #1F7BBC 30%, #2CA8FF 100%);
+            background-image: -webkit-linear-gradient( 122deg, #1F7BBC 30%, #2CA8FF 100%);
+            background-image: -ms-linear-gradient( 122deg, #1F7BBC 30%, #2CA8FF 100%);
+            background-image: linear-gradient( 122deg, #1F7BBC 30%, #2CA8FF 100%);
+        }
+        
+        .button {
+            display: block;
+            width: 50%;
+            height: 50%;
+            border-radius: 10px;
+            margin-top: 5px;
+            margin-left: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            position: relative;
+            padding: 5px 5px;
+            outline: none;
+            border: none;
+            letter-spacing: 2px;
+            background-color: #2CA8FF;
+            font-family: 'Rubik', sans-serif;
+            color: #fff;
+            transition: .5s;
+            text-transform: uppercase;
+        }
+        
+        .button:hover {
+            top: 2px;
+            background-position: right;
+        }
+        
+        .button:active {
+            top: 5px;
+        }
+        
+        .select-box {
+            cursor: pointer;
+            position: relative;
+            max-width: 20em;
+            width: 100%;
+            color: #fff;
+            font-family: 'Rubik', sans-serif;
+        }
+        
+        .select,
+        .label {
+            color: #fff;
+            display: block;
+            font: 400 17px/2em 'Rubik', sans-serif;
+        }
+        
+        .select {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            padding: 5px 0;
+            height: 40px;
+            opacity: 0;
+            /* -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; */
+            background: none transparent;
+            border: 0 none;
+            font-family: 'Rubik', sans-serif;
+        }
+        
+        .select-box1 {
+            background: #2CA8FF;
+            color: #fff;
+            font-family: 'Rubik', sans-serif;
+        }
+        
+        .label {
+            position: relative;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-family: 'Rubik', sans-serif;
+        }
+        
+        .selectOpen .label::after {
+            content: "▲";
+            color: #fff;
+            font-family: 'Rubik', sans-serif;
+        }
+        
+        .label::after {
+            color: #fff;
+            content: "▼";
+            font-size: 12px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 5px 15px;
+            border-left: 5px solid #fff;
+        }
+        
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5e60b1c68d24fc226585e42d/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+</head>
+
+<body class="">
+    <div class="wrapper ">
+        <div class="sidebar" data-color="blue">
+
+            <div class="logo">
+                <a href="#" class="simple-text logo-mini">
+            CR
+        </a>
+                <a href="#" class="simple-text logo-normal">
+            Campus Ride
+        </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li>
+                        <a href="./index.html">
+                            <i class="now-ui-icons design_app"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+
+                    <li class="active">
+                        <a href="./wallet.html">
+                            <i class="fas fa-wallet"></i>
+                            <p>Wallet</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./payment.html">
+                            <i class="fas fa-qrcode"></i>
+                            <p>Pay</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./notifications.html">
+                            <i class="now-ui-icons ui-1_bell-53"></i>
+                            <p>Notifications</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./user.html">
+                            <i class="now-ui-icons users_single-02"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li class="active-pro mt-4 mt-lg-5" id="logout">
+                        <a>
+                            <i class="fas fa-sign-out-alt"></i>
+                            <p>Sign out</p>
+
+
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute bg-primary fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-toggle">
+                            <button type="button" class="navbar-toggler">
+                                <span class="navbar-toggler-bar bar1"></span>
+                                <span class="navbar-toggler-bar bar2"></span>
+                                <span class="navbar-toggler-bar bar3"></span>
+                            </button>
+                        </div>
+                        <a class="navbar-brand cssanimation fadeInLeft" href="#pablo">Wallet</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end " id="navigation">
+
+                        <ul class="navbar-nav cssanimation fadeInRight">
+                            <li class="nav-item">
+                                <a class="nav-link" href="./user.html">
+                                    <i class="now-ui-icons users_single-02"></i>
+                                    <p>
+                                        <span class="d-lg-none d-md-block">Profile</span>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./payment.html">
+                                    <i class="fas fa-qrcode" style="font-size: 18px;"></i>
+                                    <p>
+                                        <span class="d-lg-none d-md-block ml-2" style="font-size: 11px;">Pay</span>
+                                    </p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- End Navbar -->
+            <!-- <div class="panel-header panel-header-sm"> -->
+            <div class="panel-header panel-header-lg" id="panel">
+                <div class="header text-center">
+                    <h2 class="title cssanimation blurInLeft" style="margin-top: 5rem">Check Your Wallet</h2>
+
+                </div>
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-6 pb-5">
+                        <div class="card cssanimation fadeInBottom" style="height: 500px;">
+                            <div class="card-header text-center ">
+                                Wallet Preview
+                                <hr width="80%">
+                            </div>
+
+                            <div class="card-body ">
+                                <div class="row">
+                                    <div class="col-12 text-center" style="padding-bottom: 90px;">
+                                        <p class="pt-5">Account Balance</p>
+                                        <h1 class="display-3 pt-3 pb-5">GHS 14.00</h1>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card cssanimation fadeInRight" style="height: 500px;">
+                            <div class="card-header text-center ">
+                                Wallet Acitvity
+                                <hr width="80%">
+                            </div>
+
+                            <div class="card-body ">
+
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 pb-5">
+
+                        <div class="card " style="height: 500px;">
+                            <div class="card-header text-center ">
+                                Load Your Wallet
+                                <hr width="80%">
+                            </div>
+                            <div class="card-body ">
+                                <h6 class="text-center">Load your Campus Ride wallet with mobile money
+                                </h6>
+                                <div class="row">
+                                    <DIV class="col-6 pt-3">
+                                        <img src="./assets/img/mtn21.png" alt="" width="100px">
+                                        <p> MTN MOBILE MONEY</p>
+
+
+                                        <hr width="95%">
+
+
+
+                                    </DIV>
+
+                                    <div class="col-6 pt-5 justify-content-end">
+                                        <button class="button" data-toggle="modal" data-target="#staticBackdrop" style="height:35px; padding: 0;">
+                                            USE
+                                        </button>
+
+                                    </div>
+                                    <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="staticBackdropLabel">Top-Up With <span> <img src="./assets/img/mtn21.png" alt="" width="80px"></span></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="#" method="POST">
+                                                        <div class="form-group mt-3">
+                                                            <label> MTN Wallet Number</label>
+                                                            <input type="number" id="mtnMomo" name="Wallet Number" class="form-control text-center" placeholder="Wallet Number" required oninvalid="this.setCustomValidity('Enter Wallet Number')" oninput="this.setCustomValidity('')">
+
+                                                        </div>
+                                                        <div class="form-group mt-3">
+                                                            <label>Amount</label>
+                                                            <input type="number" name="Amount" class="form-control text-center" placeholder="Amount" required oninvalid="this.setCustomValidity('Enter the amount')" oninput="this.setCustomValidity('')">
+
+                                                        </div>
+                                                        <div class="form-group mt-3">
+                                                            <label>Campus Ride Pin</label>
+                                                            <input type="password" name="Pin" class="form-control text-center" placeholder="Pin" pattern="[0-9]{4}" maxlength="4" required oninvalid="this.setCustomValidity('Enter your pin')" oninput="this.setCustomValidity('')">
+
+                                                        </div>
+                                                        <!-- <div style="margin-left: 260px; margin-top: 25px;">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                            <button type="button" class="btn btn-danger" style="width: 100px; font-size: 15px ; height: 40px; background-color: #2CA8FF; outline: none; border: none;">Top-Up</button>
+
+                                                        </div> -->
+
+
+
+                                                    </form>
+
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                    <button type="button" class="btn btn-danger" style="width: 30%; font-size: 15px ; height: 40px; background-color: #2CA8FF; outline: none; border: none;">Top-Up</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span><img src="./assets/img/airtel.png" alt="" width="100px"></span>
+                                        <p> AIRTEL TIGO CASH</p>
+                                        <hr width="95%">
+                                    </div>
+                                    <div class="col-6 pt-3">
+                                        <button class="button" data-toggle="modal" data-target="#staticBackdrop2" style="height:35px; padding: 0;">
+                                            USE
+                                        </button>
+                                    </div>
+                                    <div class="modal fade" id="staticBackdrop2" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="staticBackdropLabel2">Top-Up With <span><img src="./assets/img/airtel.png" alt="" width="80px"></span></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="#">
+                                                        <div class="form-group mt-3">
+                                                            <label> AIRTEL TIGO Wallet Number</label>
+                                                            <input type="number" id="airtelMomo" name="Wallet Number" class="form-control text-center" placeholder="Wallet Number" required oninvalid="this.setCustomValidity('Enter Wallet Number')" oninput="this.setCustomValidity('')">
+
+                                                        </div>
+                                                        <div class="form-group mt-3">
+                                                            <label>Amount</label>
+                                                            <input type="number" name="Amount" class="form-control text-center" placeholder="Amount" required oninvalid="this.setCustomValidity('Enter the amount')" oninput="this.setCustomValidity('')">
+
+                                                        </div>
+                                                        <div class="form-group mt-3">
+                                                            <label>Campus Ride Pin</label>
+                                                            <input type="password" name="Pin" class="form-control text-center" placeholder="Pin" pattern="[0-9]{4}" maxlength="4" required oninvalid="this.setCustomValidity('Enter your pin')" oninput="this.setCustomValidity('')">
+
+                                                        </div>
+                                                        <!-- <div style="margin-left: 260px; margin-top: 25px;">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                            <button type="button" class="btn btn-danger" style="width: 100px; font-size: 15px ; height: 40px; background-color: #2CA8FF; outline: none; border: none;">Top-Up</button>
+
+                                                        </div> -->
+
+
+                                                    </form>
+
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                    <button type="button" class="btn btn-danger" style="width: 30%; font-size: 15px ; height: 40px; background-color: #2CA8FF;">Top-Up</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span><img src="./assets/img/vodafone-cash.png" alt="" width="100px"></span>
+                                        <p class="pt-1"> VODAFONE CASH</p>
+
+                                    </div>
+                                    <div class="col-6 pt-3">
+                                        <button class="button" data-toggle="modal" data-target="#staticBackdrop3" style="height:35px; padding: 0;">
+                                            USE
+                                        </button>
+                                    </div>
+                                    <div class="modal fade" id="staticBackdrop3" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel3" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="staticBackdropLabel3">Top-Up With <span><span><img src="./assets/img/vodafone-cash.png" alt="" width="100px"></span></span>
+                                                    </h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="#">
+                                                        <div class="form-group mt-3">
+                                                            <label> VODAFONE Wallet Number</label>
+                                                            <input type="number" id="vodaMomo" name="Wallet Number" class="form-control text-center" placeholder="Wallet Number" required oninvalid="this.setCustomValidity('Enter Wallet Number')" oninput="this.setCustomValidity('')">
+
+                                                        </div>
+                                                        <div class="form-group mt-3">
+                                                            <label>Amount</label>
+                                                            <input type="number" name="Amount" class="form-control text-center" placeholder="Amount" required oninvalid="this.setCustomValidity('Enter the amount')" oninput="this.setCustomValidity('')">
+
+                                                        </div>
+                                                        <div class="form-group mt-3">
+                                                            <label>Campus Ride Pin</label>
+                                                            <input type="password" name="Pin" class="form-control text-center" placeholder="Pin" pattern="[0-9]{4}" maxlength="4" required oninvalid="this.setCustomValidity('Enter your pin')" oninput="this.setCustomValidity('')">
+
+                                                        </div>
+                                                        <!-- <div style="margin-left: 260px; margin-top: 25px;">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                            <button type="button" class="btn btn-danger" style="width: 100px; font-size: 15px ; height: 40px; background-color: #2CA8FF; outline: none; border: none;">Top-Up</button>
+
+                                                        </div>
+ -->
+
+                                                    </form>
+
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                    <button type="button" class="btn btn-danger" style="width: 30%; font-size: 15px ; height: 40px; background-color: #2CA8FF;">Top-Up</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                    <div class="col-md-6 pb-5">
+                        <div class="card " style="height: 500px;">
+                            <div class="card-header text-center ">
+                                Withdraw From Your Wallet
+                                <hr width="80%">
+                            </div>
+
+                            <div class="card-body ">
+                                <h6 class="text-center">Withdraw cash from your campus ride wallet
+                                </h6>
+                                <div class="text-center" id="error">
+
+                                </div>
+                                <div class="container" style="width: 10 rem;">
+                                    <form id="withdrawalForm">
+                                        <div class="form-group mt-3 ">
+                                            <label> Select Network</label>
+                                            <div class="form-group select-box">
+
+                                                <label for="select-box1" class="label select-box1"><span class="label-desc" style="color: #fff;">Please Select</span> </label>
+
+                                                <select id="select-box1" class="select">
+                                                       
+                                                        <option value="MTN" style="color: #fff; font-size: 14px; background-color: #2CA8FF;"> MTN</option>
+                                                 
+                                                        <option value="AIRTEL TIGO" style="color: #fff;  font-size: 14px;background-color: #2CA8FF;">AIRTEL TIGO</option>
+                                                        
+                                                        <option value="VODAFONE" style="color: #fff; font-size: 14px; background-color: #2CA8FF;">VODAFONE</option>
+                                                    
+                                              
+                                                </select>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <label> Mobile Wallet Number</label>
+                                            <input type="number" id="momo" name="Wallet Number" class="form-control text-center" placeholder="Wallet Number" pattern="[0-9]{10}" maxlength="10">
+
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <label>Amount</label>
+                                            <input type="number" id="amount" name="Amount" class="form-control text-center" placeholder="Amount" pattern="[0-9]{7}" maxlength="7">
+
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <label>Campus Ride Pin</label>
+                                            <input type="password" id="pin" name="Pin" class="form-control text-center" placeholder="Pin" pattern="[0-9]{4}" maxlength="4">
+
+                                        </div>
+                                        <!-- <input type="Submit" style="border-radius: 50px; font-size: 15px;" value="Withdraw" class="button mt-3" id="withdraw"> -->
+                                        <!-- <button style="border-radius: 50px; font-size: 15px;" class="button mt-3" id="withdraw">Withdraw</button> -->
+                                    </form>
+                                    <button style="border-radius: 50px; font-size: 15px;" class="button mt-3" id="withdraw">Withdraw</button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#">
+                            Campus Ride
+                        </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            About Us
+                        </a>
+                        </li>
+                        <li>
+                            <a href="mailto:support@campus-ride.com">
+                                    Email Us
+                                </a>
+                        </li>
+                        <li>
+                            <a href="tel:0203704466">Call Us</a>
+                        </li>
+
+
+                    </ul>
+                </nav>
+
+                <div class="copyright">
+                    &copy;
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script>, Designed and Coded by
+
+                    <a href="#" target="_blank">AFROHEADS</a>.
+                </div>
+            </div>
+        </footer>
+    </div>
+    </div>
+
+
+    <script src="./assets/js/core/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+        const momo = $('#momo');
+        const amount = $('#amount');
+        const pin = $('#pin');
+        let choose = $('#select-box1');
+        const errorEL = $('#error');
+        choose.val('')
+
+        momo.val('')
+        amount.val('')
+        pin.val('')
+
+
+
+
+
+        $("select").on("click", function() {
+
+            $(this).parent(".select-box").toggleClass("selectOpen");
+
+        });
+
+        $(document).mouseup(function(e) {
+            var container = $(".select-box");
+
+            if (container.has(e.target).length === 0) {
+                container.removeClass("selectOpen");
+            }
+        });
+
+
+        $("select").on("change", function() {
+
+            var selection = $(this).find("option:selected").text(),
+                labelFor = $(this).attr("id"),
+                label = $("[for='" + labelFor + "']");
+
+            label.find(".label-desc").html(selection);
+
+        });
+
+        $('#withdraw').on('click', () => {
+
+
+
+
+            if ((choose.val() === " ") || (momo.val().length === 0) || (amount.val().length === 0) || (pin.val().length === 0)) {
+
+
+                swal({
+                    title: "Error",
+                    text: "Check your details and try again",
+                    icon: "error",
+                    button: "Try Again"
+                });
+
+
+
+            } else {
+
+                swal({
+                    title: "Success",
+                    text: "Your Withdrawal is Successful",
+                    icon: "success",
+                });
+
+            }
+            choose.val('')
+
+
+            $(".label-desc").text('Please Select');
+
+            momo.val('')
+            amount.val('')
+            pin.val('')
+
+
+
+        })
+    </script>
+    <script src="./assets/js/core/popper.min.js"></script>
+    <script src="./assets/js/core/bootstrap.min.js"></script>
+    <script src="./assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/1911436ffb.js" crossorigin="anonymous"></script>
+
+    <!--  Notifications Plugin    -->
+    <script src="./assets/js/plugins/bootstrap-notify.js"></script>
+    <!-- Main JS file-->
+    <script src="./assets/js/campusride.js"></script>
+    <script src="./assets/js/core/letteranimation.min.js"></script>
+    <script src="./assets/demo/demo.js"></script>
+</body>
+
+
+</html>

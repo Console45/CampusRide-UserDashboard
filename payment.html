@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Campus Ride wallet</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- CSS Files -->
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap-reboot.min.css">
+    <!-- Main Css  -->
+    <link href="./assets/css/campusride.css" rel="stylesheet" />
+    <link href="./assets/demo/demo.css" rel="stylesheet" />
+
+    <link href="./assets/css/cssanimation.min.css" rel="stylesheet" />
+
+    <style>
+        * {
+            font-family: 'Rubik', sans-serif;
+        }
+        
+        body {
+            font-family: 'Rubik', sans-serif;
+            letter-spacing: 2px;
+        }
+        
+        #panel {
+            background-image: -moz-linear-gradient( 122deg, #1F7BBC 30%, #2CA8FF 100%);
+            background-image: -webkit-linear-gradient( 122deg, #1F7BBC 30%, #2CA8FF 100%);
+            background-image: -ms-linear-gradient( 122deg, #1F7BBC 30%, #2CA8FF 100%);
+            background-image: linear-gradient( 122deg, #1F7BBC 30%, #2CA8FF 100%);
+        }
+        
+        .swipe {
+            transform: translateX(250px);
+        }
+        
+        .swipe-area {
+            position: absolute;
+            width: 50px;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: #f3f3f3;
+            z-index: 0;
+        }
+        
+        .button {
+            display: block;
+            border-radius: 10px;
+            margin-top: 40px;
+            margin-right: 54%;
+            margin-left: 46%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            position: relative;
+            padding: 7px 7px;
+            outline: none;
+            border: none;
+            letter-spacing: 2px;
+            background-color: #2CA8FF;
+            font-family: 'Rubik', sans-serif;
+            color: #fff;
+            transition: .5s;
+            text-transform: uppercase;
+        }
+        
+        .button:hover {
+            top: 2px;
+            background-position: right;
+        }
+        
+        @media screen and (max-width: 900px) {
+            .button {
+                margin-right: 60%;
+                margin-left: 40%;
+            }
+        }
+    </style>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5e60b1c68d24fc226585e42d/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+
+    <!--End of Tawk.to Script-->
+</head>
+
+<body class="">
+    <div class="wrapper ">
+        <div class="sidebar" data-color="blue">
+            <!--
+            Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+        -->
+            <div class="logo">
+                <a href="#" class="simple-text logo-mini ">
+                        CR
+                    </a>
+                <a href="#" class="simple-text logo-normal">
+                        Campus Ride
+                    </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li>
+                        <a href="./index.html">
+                            <i class="now-ui-icons design_app"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./wallet.html">
+                            <i class="fas fa-wallet"></i>
+                            <p>Wallet</p>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="./payment.html">
+                            <i class="fas fa-qrcode"></i>
+                            <p>Pay</p>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="./notifications.html">
+                            <i class="now-ui-icons ui-1_bell-53"></i>
+                            <p>Notifications</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./user.html">
+                            <i class="now-ui-icons users_single-02"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li class="active-pro mt-4 mt-lg-5" id="logout">
+                        <a>
+                            <i class="fas fa-sign-out-alt"></i>
+                            <p>Sign out</p>
+
+
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute bg-primary fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-toggle">
+                            <button type="button" class="navbar-toggler">
+                                    <span class="navbar-toggler-bar bar1"></span>
+                                    <span class="navbar-toggler-bar bar2"></span>
+                                    <span class="navbar-toggler-bar bar3"></span>
+                                </button>
+                        </div>
+                        <a class="navbar-brand cssanimation fadeInLeft" href="#pablo">PAY</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-bar navbar-kebab"></span>
+                            <span class="navbar-toggler-bar navbar-kebab"></span>
+                            <span class="navbar-toggler-bar navbar-kebab"></span>
+                        </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+
+                        <ul class="navbar-nav cssanimation fadeInRight">
+                            <li class="nav-item">
+                                <a class="nav-link" href="./user.html">
+                                    <i class="now-ui-icons users_single-02"></i>
+                                    <p>
+                                        <span class="d-lg-none d-md-block">Profile</span>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./payment.html">
+                                    <i class="fas fa-qrcode" style="font-size: 18px;"></i>
+                                    <p>
+                                        <span class="d-lg-none d-md-block ml-2" style="font-size: 11px;">Pay</span>
+                                    </p>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- End Navbar -->
+            <div class="panel-header panel-header-lg" id="panel">
+                <div class="header text-center">
+                    <h2 class="title cssanimation blurInLeft" style="margin-top: 5rem">Make Payment</h2>
+
+                </div>
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-12 col-md-8">
+                        <div class="card cssanimation fadeInBottom" style="height: 800px; margin: auto;">
+                            <div class="card-body">
+                                <div class="places-buttons">
+                                    <div class="row">
+                                        <div class="col-md-6 ml-auto mr-auto text-center">
+                                            <h4 class="card-title ">
+                                                Scan to Pay
+
+                                            </h4>
+                                            <hr>
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col-12 col-md-12">
+                                            <div id="div-video-container">
+
+                                            </div>
+
+                                            <button id="btn-show-scanner" class="button">Scan</button>
+
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2"></div>
+
+
+
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#">
+                        Campus Ride
+                    </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                        About Us
+                    </a>
+                            </li>
+                            <li>
+                                <a href="mailto:support@campus-ride.com">
+                                Email Us
+                            </a>
+                            </li>
+                            <li>
+                                <a href="tel:0203704466">Call Us</a>
+                            </li>
+
+
+                        </ul>
+                    </nav>
+                    <div class="copyright">
+                        &copy;
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>, Designed and Coded by
+
+                        <a href="#" target="_blank">AFROHEADS</a>.
+                    </div>
+                </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+
+            <script src="https://unpkg.com/dynamsoft-javascript-barcode@7.3.0-v2/dist/dbr.js" data-productKeys="t0068NQAAAC6c4k3t828LvSdU6+jl84uQelF36iP1W6kZwBe7jt7YRiWpv9vg/L3oHyOr4Y9yqTdDadUXfIzyRGwUMi10cEo="></script>
+            <script>
+                let scanner = null;
+                document.getElementById('btn-show-scanner').addEventListener('click', async() => {
+
+                    document.querySelector("#div-video-container").innerHTML = '<video class="dbrScanner-video" playsinline="true" style=" height: 500px; width: 100%; margin-left: 0; margin-right:0; "></video>'
+                    try {
+                        scanner = scanner || await Dynamsoft.BarcodeScanner.createInstance();
+                        await scanner.setUIElement(document.getElementById('div-video-container'));
+                        scanner.onFrameRead = results => {
+
+                            if (results.length) {
+                                console.log(results);
+                            }
+                        };
+                        scanner.onUnduplicatedRead = (txt, result) => {
+                            console.log(result.barcodeFormatString + ': ' + txt);
+
+                            const swalObj = {
+                                icon: "info",
+                                title: 'Authentication Needed',
+                                text: "Enter Your Pin to Continue",
+                                inputPlaceholder: 'Campus Ride Pin',
+                                input: 'password',
+                                inputAttributes: {
+                                    maxlength: 4,
+                                    autocapitalize: 'off',
+                                    autocorrect: 'off'
+                                },
+
+                                showCancelButton: true,
+                                inputValidator: (value) => {
+                                    if (!value) {
+                                        return 'Your pin cant be empty. Try Again!'
+                                    }
+                                    if (value != password) {
+                                        return 'Pin is Incorrect'
+                                    }
+                                    if (value == password) {
+                                        Swal.fire({
+                                            icon: "success",
+                                            title: "Thank You",
+                                            text: "Your Payment Is Successful"
+
+                                        })
+                                    }
+
+                                }
+                            }
+                            let password = "0554";
+                            Swal.fire(swalObj)
+
+
+                        };
+
+                        await scanner.show();
+                    } catch (ex) {
+                        // alert(ex.message);
+                        swal({
+                            // title: "Success",
+                            text: ex.message,
+                            icon: "Warning",
+                        });
+                        throw ex;
+                    }
+                });
+            </script>
+            <script src="./assets/js/core/jquery.min.js"></script>
+            <script type="text/javascript" src="assets/js/core/jquery.touchSwipe.min.js"></script>
+            <script>
+                $(function() {
+                    $('.wrapper').swipe({
+                        swipeRight: function(event, direction, distance, fingerCount, fingerCount) {
+                            $('.sidebar').addClass(".navbar-translate")
+                        }
+                    })
+                })
+            </script>
+            <script src="./assets/js/core/popper.min.js"></script>
+            <script src="./assets/js/core/bootstrap.min.js"></script>
+            <script src="./assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+            <script src="https://kit.fontawesome.com/1911436ffb.js" crossorigin="anonymous"></script>
+
+            <!--  Notifications Plugin    -->
+            <script src="./assets/js/plugins/bootstrap-notify.js"></script>
+            <!-- Main JS file-->
+            <script src="./assets/js/campusride.js"></script>
+
+            <script src="./assets/demo/demo.js"></script>
+            <script src="./assets/js/core/letteranimation.min.js"></script>
+</body>
+
+</html>

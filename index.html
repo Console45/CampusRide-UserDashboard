@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Campus Ride wallet</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <!-- CSS Files -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.0/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap-reboot.min.css">
+    <!-- Main Css  -->
+    <link href="./assets/css/campusride.css" rel="stylesheet" />
+    <link href="./assets/demo/demo.css" rel="stylesheet" />
+    <link href="./assets/css/cssanimation.min.css" rel="stylesheet" />
+    <style>
+        * {
+            font-family: 'Rubik', sans-serif;
+        }
+        
+        body {
+            font-family: 'Rubik', sans-serif;
+            letter-spacing: 2px;
+        }
+        
+        #panel {
+            background-image: -moz-linear-gradient( 122deg, #1F7BBC 30%, #2CA8FF 100%);
+            background-image: -webkit-linear-gradient( 122deg, #1F7BBC 30%, #2CA8FF 100%);
+            background-image: -ms-linear-gradient( 122deg, #1F7BBC 30%, #2CA8FF 100%);
+            background-image: linear-gradient( 122deg, #1F7BBC 30%, #2CA8FF 100%);
+        }
+        
+        .tbl {
+            height: 428px;
+            overflow-y: scroll;
+        }
+        
+        .tb2 {
+            height: 328px;
+            overflow-y: scroll;
+        }
+        
+        .active-pro:hover {
+            color: aliceblue;
+        }
+    </style>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5e60b1c68d24fc226585e42d/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+</head>
+
+<body class="">
+    <div class="wrapper">
+        <div class="sidebar" data-color="blue">
+
+            <div class="logo">
+                <a href="#" class="simple-text logo-mini">
+                    CR
+                </a>
+                <a href="#" class="simple-text logo-normal">
+                    Campus Ride
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li class="active">
+                        <a href="./index.html">
+                            <i class="now-ui-icons design_app"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./wallet.html">
+                            <i class="fas fa-wallet"></i>
+                            <p>Wallet</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./payment.html">
+                            <i class="fas fa-qrcode"></i>
+                            <p>Pay</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./notifications.html">
+                            <i class="now-ui-icons ui-1_bell-53"></i>
+                            <p>Notifications</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./user.html">
+                            <i class="now-ui-icons users_single-02"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+
+                    <li class="active-pro mt-4 mt-lg-5" id="logout">
+                        <a>
+                            <i class="fas fa-sign-out-alt"></i>
+                            <p>Sign out</p>
+
+
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute bg-primary fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-toggle">
+                            <button type="button" class="navbar-toggler">
+                                <span class="navbar-toggler-bar bar1"></span>
+                                <span class="navbar-toggler-bar bar2"></span>
+                                <span class="navbar-toggler-bar bar3"></span>
+                            </button>
+                        </div>
+                        <a class="navbar-brand cssanimation fadeInLeft" href="#pablo">Dashboard</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+
+                        <ul class="navbar-nav cssanimation fadeInRight">
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="./user.html">
+                                    <i class="now-ui-icons users_single-02"></i>
+                                    <p>
+                                        <span class="d-lg-none d-md-block">Profile</span>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./payment.html">
+                                    <i class="fas fa-qrcode" style="font-size: 18px;"></i>
+                                    <p>
+                                        <span class="d-lg-none d-md-block ml-2" style="font-size: 11px;">Pay</span>
+                                    </p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- End Navbar -->
+
+            <div class="panel-header panel-header-lg" id="panel">
+                <div class="header text-center">
+
+                    <h2 class="title cssanimation blurInLeft" style="margin-top: 5rem">Welcome To Your Dashboard</h2>
+
+                </div>
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card card-tasks cssanimation fadeInBottom">
+                            <div class="card-header ">
+
+                                <h4 class="card-title text-center">Account Preview</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12 col-md-6 text-center">Account Balance
+                                        <h1 class="py-5" style="font-size: 60px;">GHS 14.00</h1>
+                                    </div>
+
+                                    <div class=" col-12 col-md-6 text-center ">Account History
+                                        <div class="table-responsive  justify-content-Center  tb2 pt-3">
+                                            <table class="account table ">
+                                                <thead class=" thead" style="color: #2CA8FF;">
+                                                    <th class="text-center">
+                                                        Date
+                                                    </th>
+                                                    <th class="text-center">
+                                                        Top-Up
+                                                    </th>
+
+                                                </thead>
+                                                <tbody class="py-5">
+                                                    <tr class="py-5">
+                                                        <td class="text-center">
+                                                            Monday
+                                                        </td>
+                                                        <td class="text-center">
+                                                            GHS 9.00
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            Tuesday
+                                                        </td>
+                                                        <td class="text-center">
+                                                            GHS 9.00
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            Wednesday
+                                                        </td>
+                                                        <td class="text-center">
+                                                            GHS 9.00
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            Thursday
+                                                        </td>
+                                                        <td class="text-center">
+                                                            GHS 9.00
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            Friday
+                                                        </td>
+                                                        <td class="text-center">
+                                                            GHS 9.00
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            Saturday
+                                                        </td>
+                                                        <td class="text-center">
+                                                            GHS 9.00
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            Monday
+                                                        </td>
+                                                        <td class="text-center">
+                                                            GHS 9.00
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            Wednesday
+                                                        </td>
+                                                        <td class="text-center">
+                                                            GHS 9.00
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            Friday
+                                                        </td>
+                                                        <td class="text-center">
+                                                            GHS 9.00
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            Thursday
+                                                        </td>
+                                                        <td class="text-center">
+                                                            GHS 9.00
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            Sunday
+                                                        </td>
+                                                        <td class="text-center">
+                                                            GHS 9.00
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            Tuesday
+                                                        </td>
+                                                        <td class="text-center">
+                                                            GHS 9.00
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            Friday
+                                                        </td>
+                                                        <td class="text-center">
+                                                            GHS 9.00
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            Monday
+                                                        </td>
+                                                        <td class="text-center">
+                                                            GHS 9.00
+                                                        </td>
+
+                                                    </tr>
+                                                </tbody>
+
+                                            </table>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <hr>
+                                <div class="stats">
+                                    <i class="now-ui-icons loader_refresh spin"></i> Updated 3 minutes ago
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card cssanimation fadeInRight">
+                            <div class="card-header">
+
+                                <h4 class="card-title text-center"> Rides History</h4>
+                            </div>
+                            <div class="card-body">
+
+                                <div class="table-responsive  justify-content-Center  tbl">
+                                    <table class="table">
+                                        <thead class=" thead" style="color: #2CA8FF;">
+                                            <th class="text-center">
+                                                Date
+                                            </th>
+                                            <th class="text-center">
+                                                Rides
+                                            </th>
+                                            <th class="text-center">
+                                                Fare
+                                            </th>
+
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">
+                                                    Monday
+                                                </td>
+                                                <td class="text-center">
+                                                    9
+                                                </td>
+                                                <td class="text-center">
+                                                    GHS 9.00
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    Tuesday
+                                                </td>
+                                                <td class="text-center">
+                                                    4
+                                                </td>
+                                                <td class="text-center">
+                                                    GHS 4.00
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    Wednesday
+                                                </td>
+                                                <td class="text-center">
+                                                    8
+                                                </td>
+                                                <td class="text-center">
+                                                    GHS 8.00
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    Thursday
+                                                </td>
+                                                <td class="text-center">
+                                                    4
+                                                </td>
+                                                <td class="text-center">
+                                                    GHS 4.00
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    Friday
+                                                </td>
+                                                <td class="text-center">
+                                                    6
+                                                </td>
+                                                <td class="text-center">
+                                                    GHS 6.00
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    Monday
+                                                </td>
+                                                <td class="text-center">
+                                                    8
+                                                </td>
+                                                <td class="text-center">
+                                                    GHS 8.00
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    Tuesday
+                                                </td>
+                                                <td class="text-center">
+                                                    5
+                                                </td>
+                                                <td class="text-center">
+                                                    GHS 5.00
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    Wednesday
+                                                </td>
+                                                <td class="text-center">
+                                                    11
+                                                </td>
+                                                <td class="text-center">
+                                                    GHS 11.00
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    Thursday
+                                                </td>
+                                                <td class="text-center">
+                                                    8
+                                                </td>
+                                                <td class="text-center">
+                                                    GHS 8.00
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#">
+                            Campus Ride
+                        </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                            About Us
+                        </a>
+                            </li>
+                            <li>
+                                <a href="mailto:support@campus-ride.com">
+                                    Email Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:0203704466">Call Us</a>
+                            </li>
+
+
+                        </ul>
+                    </nav>
+                    <div class="copyright">
+                        &copy;
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>, Designed and Coded by
+
+                        <a href="#" target="_blank">AFROHEADS</a>.
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="./assets/js/core/jquery.min.js"></script>
+    <script src="./assets/js/core/popper.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.0/js/mdb.min.js"></script>
+    <script src="./assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/1911436ffb.js" crossorigin="anonymous"></script>
+
+    <!--  Notifications Plugin    -->
+    <script src="./assets/js/plugins/bootstrap-notify.js"></script>
+    <!-- Main JS file-->
+    <script src="./assets/js/campusride.js"></script>
+
+    <script src="./assets/demo/demo.js"></script>
+    <script src="./assets/js/core/letteranimation.min.js"></script>
+
+</body>
+
+
+</html>

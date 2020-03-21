@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Campus Ride wallet</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <!-- CSS Files -->
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap-reboot.min.css">
+    <!-- Main Css  -->
+    <link href="./assets/css/campusride.css" rel="stylesheet" />
+    <link href="./assets/css/cssanimation.min.css" rel="stylesheet" />
+
+    <link href="./assets/demo/demo.css" rel="stylesheet" />
+    <style>
+        * {
+            font-family: 'Rubik', sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            font-family: 'Rubik', sans-serif;
+            letter-spacing: 2px;
+        }
+        
+        .button {
+            display: block;
+            width: 100%;
+            height: 50%;
+            border-radius: 50px;
+            margin: 1rem 0;
+            font-size: 1.2rem;
+            cursor: pointer;
+            position: relative;
+            padding: 13px 18px;
+            outline: none;
+            border: none;
+            letter-spacing: 2px;
+            background-color: #2CA8FF;
+            font-family: 'Rubik', sans-serif;
+            color: #fff;
+            transition: .5s;
+            text-transform: uppercase;
+            box-shadow: 0px 9px 32px 0px rgba(0, 0, 0, 0.2);
+        }
+        
+        .button:hover {
+            top: 2px;
+            background-position: right;
+        }
+        
+        .borderofinput {
+            border-color: #2CA8FF;
+        }
+        
+        .button:active {
+            top: 5px;
+        }
+        
+        #panel {
+            background-image: -moz-linear-gradient( 122deg, #1F7BBC 30%, #2CA8FF 100%);
+            background-image: -webkit-linear-gradient( 122deg, #1F7BBC 30%, #2CA8FF 100%);
+            background-image: -ms-linear-gradient( 122deg, #1F7BBC 30%, #2CA8FF 100%);
+            background-image: linear-gradient( 122deg, #1F7BBC 30%, #2CA8FF 100%);
+        }
+        
+        .imgcont {
+            display: flex;
+            justify-content: center;
+        }
+        
+        div.item {
+            position: relative;
+            overflow: hidden;
+            margin: 10px 1%;
+            width: 130px;
+            height: 130px;
+            /* background: #000000; */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            padding: 0;
+        }
+        
+        div.item.blue {
+            background-color: #34495e;
+            border-radius: 200px;
+        }
+        
+        div.item img {
+            vertical-align: top;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+        
+        div.item.blue i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            color: #34495e;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 40px;
+            line-height: 60px;
+            background-color: aliceblue;
+            transform: translate(-50%, -50%) scale(0);
+        }
+        
+        div.item:hover img {
+            opacity: 0.3;
+            filter: grayscale(100%);
+        }
+        
+        div.item * {
+            transition: all .5s ease-in-out;
+        }
+        
+        div.item:hover i {
+            transform: translate(-50%, -50%) scale(1);
+            transition-delay: 200ms;
+            transition-duration: .5s;
+            transition-timing-function: ease-in-out;
+        }
+        
+        .dropdown-content {
+            background: #f1f1f1;
+            padding: 0;
+            margin-left: -70px;
+            margin-top: 80px;
+            list-style: none;
+            z-index: 3000;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+        
+        .dropdown-content a {
+            color: #2cabff;
+            text-decoration: none;
+            display: block;
+            padding: 12px 16px;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        
+        div.item.fa-camera:hover .dropdown-content {
+            display: block;
+        }
+        
+        .navbar {
+            box-shadow: none;
+        }
+        
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+        
+        .fixed {
+            transform: translateX(40px);
+        }
+        
+        #appearImageDiv {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            z-index: 10;
+            opacity: 0.7;
+            background-color: #002447;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #appearImage {
+            display: block;
+            position: relative;
+            z-index: 100;
+            transform: translate(-50%, -50%);
+        }
+        
+        .wrapper {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5e60b1c68d24fc226585e42d/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+</head>
+
+<body class="">
+    <div class="wrapper ">
+        <div class="sidebar" data-color="blue">
+
+            <div class="logo">
+                <a href="#" class="simple-text logo-mini">
+                    CR
+                </a>
+                <a href="#" class="simple-text logo-normal">
+                    Campus Ride
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li>
+                        <a href="./index.html">
+                            <i class="now-ui-icons design_app"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./wallet.html">
+                            <i class="fas fa-wallet"></i>
+                            <p>Wallet</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./payment.html">
+                            <i class="fas fa-qrcode"></i>
+                            <p>Pay</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./notifications.html">
+                            <i class="now-ui-icons ui-1_bell-53"></i>
+                            <p>Notifications</p>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="./user.html">
+                            <i class="now-ui-icons users_single-02"></i>
+                            <p>User Profile</p>
+                        </a>`
+                    </li>
+
+                    <li class="active-pro mt-4 mt-lg-5" id="logout">
+                        <a>
+                            <i class="fas fa-sign-out-alt"></i>
+                            <p>Sign out</p>
+
+
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel ">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top py-0" id="mainNavbar">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-toggle">
+                            <button type="button" class="navbar-toggler">
+                                <span class="navbar-toggler-bar bar1"></span>
+                                <span class="navbar-toggler-bar bar2"></span>
+                                <span class="navbar-toggler-bar bar3"></span>
+                            </button>
+                        </div>
+                        <a class="navbar-brand cssanimation fadeInLeft" href="#pablo">User Profile</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+
+                        <ul class="navbar-nav cssanimation fadeInRight">
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="./user.html">
+                                    <i class="now-ui-icons users_single-02"></i>
+                                    <p>
+                                        <span class="d-lg-none d-md-block">Profile</span>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./payment.html">
+                                    <i class="fas fa-qrcode" style="font-size: 18px;"></i>
+                                    <p>
+                                        <span class="d-lg-none d-md-block ml-2" style="font-size: 11px;">Pay</span>
+                                    </p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- End Navbar -->
+            <div class="panel-header panel-header-lg" id="panel">
+                <div class="header text-center">
+                    <h2 class="title cssanimation blurInLeft" style="margin-top: 5rem;">Check Your Profile</h2>
+
+                </div>
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card cssanimation fadeInBottom ">
+                            <div class="card-header ">
+                                <h5 class="title">Edit Profile</h5>
+                            </div>
+                            <div class="card-body pb-4 pb-lg-4 pb-xl-5 ">
+                                <form>
+                                    <div class="row">
+
+                                        <div class="col-md-6 px-4">
+                                            <div class="form-group">
+                                                <label>Student ID</label>
+                                                <input type="text" class="form-control" disabled="" placeholder="Username" value="Student ID">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 pl-4">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Email address</label>
+                                                <input type="email" class="form-control" disabled="" value="Email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 px-4">
+                                            <div class="form-group">
+                                                <label>First Name</label>
+                                                <input type="text" class="form-control" disabled="" value=" First Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 pl-4">
+                                            <div class="form-group">
+                                                <label>Last Name</label>
+                                                <input type="text" class="form-control" disabled="" placeholder="Last Name" value="Last Name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 px-4">
+                                            <div class="form-group">
+                                                <label>Hall of Residence</label>
+                                                <input type="text" class="form-control" placeholder="Hall of Residence" value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 pl-4">
+                                            <div class="form-group">
+                                                <label>Phone Number</label>
+                                                <input type="number" class="form-control" placeholder="Phone" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 px-4">
+                                            <div class="form-group">
+                                                <label>Level</label>
+                                                <input type="number" class="form-control" placeholder="Level" value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 pl-4">
+                                            <div class="form-group">
+                                                <label>Course</label>
+                                                <input type="text" class="form-control" placeholder="Course" value="">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <input type="Submit" value="Save Changes" class="button">
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mt-5  mt-md-0">
+                        <div class="card card-user cssanimation fadeInRight " style="height: 480px;">
+
+                            <div class="card-body pb-0 pb-xl-5">
+
+                                <div class="author">
+
+                                    <div class="imgcont">
+
+                                        <div class="item blue" id="blue">
+
+                                            <img class="ppic" src="./assets/img//profilePic.svg" alt="..." width="130px">
+
+                                            <a class="picon" href="#"><i id="picon" class="fa fa-camera" onmouseover="showDrop()" onmouseout="hideDrop()"></i></a>
+
+
+
+                                        </div>
+
+                                        <ul class="dropdown-content" onmouseover="showDrop()" onmouseout="hideDrop()">
+                                            <li>
+                                                <a href="#" id="view" style="text-decoration: none;">View</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#" id="edit" style="text-decoration: none;">Edit</a>
+                                            </li>
+
+                                        </ul>
+
+
+
+                                    </div>
+
+
+                                    <!-- <p class="description ">Click on profile pic to edit</p> -->
+                                    <h5 class="title px-2" style="color: #2CA8FF;">First Name Last Name</h5>
+
+                                    <p class="description pb-1">
+                                        Student ID
+                                    </p>
+                                    <p class="description pb-1">
+                                        Hall of Residence
+                                    </p>
+                                    <p class="description pb-1">
+                                        Level
+                                    </p>
+                                    <p class="description pb-1">
+                                        Course
+                                    </p>
+                                    <p class="description pb-1">
+                                        Email
+                                    </p>
+                                    <p class="description  ">
+                                        Phone Number
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#">
+                            Campus Ride
+                        </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                            About Us
+                        </a>
+                            </li>
+                            <li>
+                                <a href="mailto:support@campus-ride.com">
+                                    Email Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:0203704466">Call Us</a>
+                            </li>
+
+
+                        </ul>
+                    </nav>
+                    <div class="copyright">
+                        &copy;
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>, Designed and Coded by
+
+                        <a href="#" target="_blank">AFROHEADS</a>.
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="./assets/js/core/jquery.min.js"></script>
+    <script>
+        const showDrop = () => {
+            $('.dropdown-content').css({
+                    display: "block",
+                    transitionDuration: "2s"
+
+                }
+
+            )
+
+
+
+        }
+
+        const hideDrop = () => {
+            $('.dropdown-content').css({
+                display: "none"
+            })
+
+
+        }
+
+        jQuery(function($) {
+            $('#view').click(() => {
+                var img = $(".ppic").attr("src");
+                var appearImage = "<div id ='appearImageDiv'  class='wrapper' onclick='closeImage()'><divstyle = 'border: 2px solid white; text-align:center'></div></div>";
+                // appearImage = appearImage.concat("<img style=transform: translate(-50%, -50%); z-index: 20; margin:auto; width:100%; height:100%'class='appearImage'src=''./assets/img//profilePic.svg'alt='...' >")
+                $('body').append(appearImage);
+
+            })
+
+        })
+
+
+        function closeImage() {
+            $('#appearImageDiv').remove();
+            $('#appearImage').remove();
+
+
+        }
+    </script>
+
+    <script src="./assets/js/core/popper.min.js"></script>
+    <script src="./assets/js/core/bootstrap.min.js"></script>
+    <script src="./assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/1911436ffb.js" crossorigin="anonymous"></script>
+
+    <!--  Notifications Plugin    -->
+    <script src="./assets/js/plugins/bootstrap-notify.js"></script>
+    <!-- Main JS file-->
+    <script src="./assets/js/campusride.js"></script>
+    <script src="./assets/js/core/letteranimation.min.js"></script>
+    <script src="./assets/demo/demo.js"></script>
+</body>
+
+
+
+</html>
