@@ -50,6 +50,9 @@
         .active-pro:hover {
             color: aliceblue;
         }
+        [data-notify="container"]{
+            width: 300px;
+        }
     </style>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
@@ -537,6 +540,30 @@
 
     <!--  Notifications Plugin    -->
     <script src="./assets/js/plugins/bootstrap-notify.js"></script>
+    <script>
+            const covidTips =[
+                'Don’t touch your eyes, nose or mouth.',
+                'Stay home if you feel unwell.',
+                'Clean your hands often. Use soap and water, or an alcohol-based hand rub.',
+                'Maintain a safe distance from anyone who is coughing or sneezing.',
+                'Wear your nose mask regularly',
+                'If you have a fever, a cough, and difficulty breathing, seek medical attention. Call in advance.'
+
+            ]
+            let randomTip = Math.floor(Math.random()*covidTips.length);
+            
+            const tips = covidTips[randomTip];
+            $.notify({
+                    
+                    message: '<strong>Covid-19 Tips:</strong> ' + tips
+                }, {
+                    // settings
+                    type: 'info',
+                    allow_dismiss:true,
+                    mouse_over: 'pause',
+                   
+                });
+    </script>
     <!-- Main JS file-->
     <script src="./assets/js/campusride.js"></script>
 
